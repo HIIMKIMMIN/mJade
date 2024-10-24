@@ -30,7 +30,7 @@ section#gallary{
 header{
     /* background: url(../img/main_visual.png) no-repeat top/cover; */
     width: 100%;
-    height: 100px;
+    /* height: 80px; */
 }
 nav#gnb_list{
     z-index: 1000;
@@ -39,16 +39,19 @@ nav#gnb_list{
     background: #ffffffc2;
     color: #111;
     /* height: 80px; */
-    animation: nav-fixed 1s;
+    animation: gnb-fixed 1s;
 }
-@keyframes nav-fixed {
+header nav.fixed .gnb{
+    height: 150px;
+}
+@keyframes gnb-fixed {
     0%{
         opacity: 0;
-        height: 120px;
+        height: 80px;
     }
     100%{
         opacity: 1;
-        height: 80px;
+        height: 150px;
     }
 }
 nav .gnb{
@@ -59,6 +62,7 @@ nav .gnb{
 }
 nav .gnb{
     padding: 30px 100px;
+    height: 80px;;
 }
 nav .gnb a{
     font-size: 18px;
@@ -78,10 +82,9 @@ nav .gnb .logo{
     background: url(../img/logo_white.png) no-repeat center/contain;
     animation: logo-basic 1s;
 }
-nav .gnb .logo{
-    animation: logo-fixed 1s;
-    height: 60px;
-    background: url(../img/logo_black.png) no-repeat center/contain;
+nav .gnb .logo a{
+    display: block;
+    cursor: pointer;
 }
 @keyframes logo-fixed {
     0%{
@@ -170,7 +173,6 @@ nav.active .util_lang ul{
     color: #111111a6;
     animation: fadeIn 1s;
 }
-
 @keyframes fadeIn{
     0%{
         opacity: 0;
@@ -253,9 +255,6 @@ section#product_buy_wrap{
     font-weight: 600;
     margin-bottom: 30px;
 }
-#product_buy_wrap .detail_area .percent{
-
-}
 #product_buy_wrap .detail_area .price_area{
     display: flex;
     justify-content: space-between;
@@ -312,9 +311,9 @@ section#product_buy_wrap{
 #product_buy_wrap .detail_area .about p.on{
     display: block;
 }
-#product_buy_wrap .detail_area .about .btn_more{
+/* #product_buy_wrap .detail_area .about .btn_more{
     cursor: pointer;
-}
+} */
 #product_buy_wrap .detail_area ul.selection li{
     display: flex;
     flex-wrap: wrap;
@@ -423,10 +422,51 @@ section#product_buy_wrap{
   color: #fff;
   transition: all 0.5s;
 }
+#product_buy_wrap .detail_area.fixed{
+    position: fixed;
+    top: 150px; right: 0;
+    width: 500px; height: calc(100vh - 150px);
+    background: #fff;
+    padding: 30px;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    animation: option-open 0.5s;
+}
+@keyframes option-open{
+    0%{
+        right: -100%
+    }
+    100%{
+        right: 0;
+    }
+}
+#product_buy_wrap .detail_area.fixed span.black,
+#product_buy_wrap .detail_area.fixed .title,
+#product_buy_wrap .detail_area.fixed .about,
+#product_buy_wrap .detail_area.fixed .price_area{
+    display: none;
+}
+#product_buy_wrap .detail_area.fixed .info{
+    height: 50%;
+}
+#product_buy_wrap .detail_area.fixed .total{
+    border-top: 1px solid #111111a6;
+    padding-top: 30px;
+}
+
+
+
+
+
+
 
 /* snb */
 nav#snb_list{
     border-top: 1px solid #e7e7e7;
+    position: relative;
 }
 .snb{
     width: 400px;
@@ -435,6 +475,20 @@ nav#snb_list{
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
+}
+#snb_list.fixed .snb{
+    position: fixed;
+    top: 80px; left: 0; right: 0;
+    z-index: 1100;
+    animation: snb-fixed 0.5s;
+}
+@keyframes snb-fixed{
+    0%{
+        top: 30px;
+    }
+    100%{
+        top: 80px;
+    }
 }
 .snb li{
     position: relative;
@@ -460,3 +514,41 @@ nav#snb_list{
     color: #98314B;
     padding-left: 10px;
 }
+
+#snb_list #btn_option_open,
+#snb_list #btn_option_close{
+    opacity: 0;
+}
+#snb_list.fixed #btn_option_open{
+    opacity: 1;
+    visibility: visible;
+    position: fixed;
+    top: 100px; right: 10px;
+    z-index: 1100;
+    background: #98314B;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    border-radius: 2px;
+}
+#snb_list.fixed #btn_option_close{
+    opacity: 1;
+    visibility: hidden;
+    position: fixed;
+    top: 100px; right: 10px;
+    z-index: 1100;
+    background: #98314B;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* section-product_info */
+section#product_tab_wrap{
+    max-width: 100%;
+}
+#product_tab_wrap .img_area{
+    text-align: center;
+}
+

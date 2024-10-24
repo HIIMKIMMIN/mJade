@@ -15,7 +15,7 @@
             <nav id="gnb_list">
                 <ul class="gnb">
                     <li class="menu"><a href="#">MENU <i class="fa-solid fa-caret-down"></i></a></li>
-                    <li class="logo"><a href="top"></a></li>
+                    <li class="logo"><a href="index.html"></a></li>
                     <li class="util">
                         <ul class="util_wrap">
                             <li class="util_lang">
@@ -104,7 +104,6 @@
                             <option value="s_1_5">클래식 마틸다 [L] 스티치 다크브라운</option>
                         </select>
                     </li>
-                
                     <li>
                         <label for="select2">선택2</label>
                         <select name="select2" id="select2">
@@ -115,8 +114,7 @@
                             <option value="s_2_5">클래식 마틸다 [L] 스티치 다크브라운</option>
                         </select>
                     </li>
-                </ul>
-                
+                </ul>     
                 <ul class="info">
                     <li>주문 수량안내 | 최소 주문수량 <span>1개</span> 이상</li>
                     <li>위 옵션선택 박스를 선택하시면 아래에 상품이 추가됩니다.</li>
@@ -145,10 +143,38 @@
                 <li><a href="">상품문의 <span>513</span></a></li>
                 <li><a href="">구매안내</a></li>
             </ul>
+            <button id="btn_option_open">구매옵션 열기 <i class="fa-solid fa-caret-down"></i></button>
+            <button id="btn_option_close"><i class="fa-solid fa-xmark"></i></button>
         </nav>
-        <section id="product_info">
-            <img src="img/product_info_img.png" alt="상세페이지">
-            <img src="img/product_info_img(2).png" alt="상세페이지">
+        <section id="product_tab_wrap">
+            <div class="img_area">
+                <img src="img/product_info_img.png" alt="상세페이지">
+                <img src="img/product_info_img(2).png" alt="상세페이지">
+            </div>
+            <div class="review_area">
+                <div class="title">
+                    REVIEW
+                    상품 사용후기입니다.
+                </div>
+                <div class="view">
+                    REVIEW (2,051)
+                    전체 상품 리뷰 보기
+                </div>
+                <div class="like">
+                    <div class="like_L">
+                        4.9
+                        99%의 구매자가 이 상품을 좋아합니다.
+                        상품 리뷰 작성하기
+                    </div>
+                    <div class="like_R">
+                        <div class="five_star"></div>
+                        <div class="four_star"></div>
+                        <div class="three_star"></div>
+                        <div class="two_star"></div>
+                        <div class="one_star"></div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
     <script src="js/product_page.js"></script>

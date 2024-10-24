@@ -16,4 +16,4 @@ line-height: 0;
 height: 0;
 overflow: hidden;
 text-indent: -9999px;}
-a, button{background: none; border: none;}
+a, button{background: none; border: none; cursor: pointer;}
